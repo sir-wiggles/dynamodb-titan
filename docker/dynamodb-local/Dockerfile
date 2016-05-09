@@ -2,8 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER Brainframe Technologies <docker@brainframe.me>
 
-RUN apt-get update && \
-    apt-get -y upgrade
+RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get install -y zip wget default-jdk
 
@@ -17,6 +16,7 @@ RUN unzip /opt/dynamodb-local.zip -d /opt/dynamodb-local/ && \
 WORKDIR /opt/dynamodb-local/
 
 COPY ./run.sh /opt/dynamodb-local/
+RUN chmod +x run.sh
 
 EXPOSE 8000
 

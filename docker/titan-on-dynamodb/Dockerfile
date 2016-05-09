@@ -20,6 +20,8 @@ ADD run.sh /opt/dynamodb-titan054-storage-backend-1.0.0-hadoop2/
 
 WORKDIR /opt/dynamodb-titan054-storage-backend-1.0.0-hadoop2
 
+RUN chmod +x run.sh
+
 EXPOSE 8182
 EXPOSE 8183
 EXPOSE 8184
